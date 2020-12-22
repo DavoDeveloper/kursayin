@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(270deg, #8a307f, #6883bc, #79a7d3);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+  width: 100%;
+  height: 626px;
+  /* overflow-y: hidden; */
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.main_information {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+  padding-top: 265px;
+}
+.letter {
+  display: inline-block;
+  opacity: 0;
+  font-size: 35px;
+}
+
+.plane {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 44%;
+}
+
+@import url("https://rsms.me/inter/inter-ui.css");
+::selection {
+  background: #2d2f36;
+}
+::-webkit-selection {
+  background: #2d2f36;
+}
+::-moz-selection {
+  background: #2d2f36;
+}
+
+.page {
+  display: none;
+  background-color: #fff;
+  width: 371px;
+  height: 315px;
+  border-radius: 15px;
+  margin: 0 auto;
+  margin-top: 157px;
+}
+
+.login {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+}
+.eula {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 40px;
+}
+.right {
+  background: #474a59;
+  box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.22);
+  color: black;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .right {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 350px;
+  }
+}
+svg {
+  position: absolute;
+  width: 320px;
+}
+path {
+  fill: none;
+  stroke: url(#linearGradient);
+  stroke-width: 4;
+  stroke-dasharray: 240 1386;
+}
+.form {
+  margin: 40px;
+  position: absolute;
+}
+label {
+  color: #c2c2c5;
+  display: block;
+  font-size: 14px;
+  height: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+input {
+  background: transparent;
+  border: 0;
+  color: black;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 100%;
+}
+input::-moz-focus-inner {
+  border: 0;
+}
+#submit {
+  color: #707075;
+  margin-top: 40px;
+  transition: color 300ms;
+  margin-bottom: 15px;
+}
+
+#cancel {
+  cursor: pointer;
+}
+
+.toolbar,
+.param {
+  height: 350px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.toolbar {
+  width: 1000px;
+  display: none;
+}
+
+.tip1,
+.help1 {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 43px 25px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 43px 25px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 43px 25px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  padding-top: 7px;
+}
+.tip1 {
+  margin-right: 50px;
+}
+
+.tip1 > p,
+.help1 > p {
+  border-bottom: 1px solid black;
+}
+
+.tool {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+}
+
+.tool span {
+  border-right: 1px solid #000;
+  padding-right: 42px;
+  height: 31px;
+  line-height: 27px;
+  display: flex;
+  justify-content: center;
+  width: 14%;
+  cursor: pointer;
+}
+
+.windows {
+  position: absolute;
+  top: 84px;
+  left: 180px;
+  display: flex;
+}
+
+.noneClick {
+  pointer-events: none;
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
