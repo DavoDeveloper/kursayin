@@ -57,22 +57,54 @@
           </div>
         </div>
       </div>
-      <div class="toolbar">
-        <div class="tool">
-          <span>Exam</span>
-          <span class="tip">Tip of the day</span>
-          <span class="help">Help</span>
-          <span>Sort</span>
-          <span>Close All</span>
-          <span style="border-right: 0px">Exit</span>
+      <div class="tools">
+        <div class="toolbar">
+          <div class="tool">
+            <span>Exam</span>
+            <span class="tip">Tip of the day</span>
+            <span class="help">Help</span>
+            <span class="sort">
+              <div>Sort</div>
+              <div class="controls hide">
+                <p class="vertical">Vertical</p>
+                <p class="horizontal">Horizontal</p>
+              </div>
+            </span>
+            <span class="author">Author</span>
+            <span class="closeAll">Close All</span>
+            <span class="exit">Exit</span>
+          </div>
         </div>
-      </div>
-      <div class="windows">
-        <div class="tip1 hide">
-          <p>Tip of the day</p>
-        </div>
-        <div class="help1 hide">
-          <p>Help</p>
+        <div class="windows flex">
+          <div class="tip1 hide">
+            <p>Tip of the day</p>
+            <div class="tipWindow">
+              <div class="tip_block"></div>
+              <button class="next" style="margin-right: 5px">Next Tip</button>
+              <button class="okey">OK</button>
+            </div>
+          </div>
+          <div class="help1 hide">
+            <p>Help</p>
+            <div>
+              <input class="file" type="file" style="font-size: 14px" />
+              <textarea cols="30" rows="20"></textarea>
+            </div>
+            <div class="okBut">
+              <button>OK</button>
+            </div>
+          </div>
+          <div class="author1 hide">
+            <p>Author</p>
+            <span>Պողոսյան Դավիթ</span>
+            <h3>Կուրսային աշխատանք</h3>
+            <span>714 խումբ</span>
+            <span>Ժամկետը մինչև՝25․12․2020</span>
+            <img style="height: 157px; margin: 66px 0" src="../images/banner.jpg" alt="" />
+            <div class="okay">
+              <button>Ok</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

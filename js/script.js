@@ -44,7 +44,7 @@ setTimeout(function () {
   plane.style.display = "none";
   main.style.display = "none";
   loginPage.style.display = "block";
-}, 15);
+}, 15000);
 
 var current = null;
 document.querySelector("#email").addEventListener("focus", function (e) {
@@ -122,10 +122,11 @@ cancel.addEventListener("click", reload);
 // main windows
 let tip = document.querySelector(".tip");
 let help = document.querySelector(".help");
-let windows = document.querySelector(".windows");
-
+let author = document.querySelector(".author");
+let author1 = document.querySelector(".author1");
 let tip1 = document.querySelector(".tip1");
 let help1 = document.querySelector(".help1");
+let windows = document.querySelector(".windows");
 
 function createWindow(el, darget) {
   darget.addEventListener("click", () => {
@@ -136,5 +137,103 @@ function createWindow(el, darget) {
 
 createWindow(tip1, tip);
 createWindow(help1, help);
-// tip.addEventListener("click", createWindow(tip1));
-// help.addEventListener("click", createWindow(help1));
+createWindow(author1, author);
+
+// exit function
+let exit = document.querySelector(".exit");
+let tools = document.querySelector(".tools");
+exit.addEventListener("click", () => {
+  let a = confirm("are you sure?");
+  if (a == true) {
+    location.reload();
+  } else {
+    return false;
+  }
+});
+
+// close all windoww
+let closeAll = document.querySelector(".closeAll");
+closeAll.addEventListener("click", () => {
+  tip1.classList.add("hide");
+  help1.classList.add("hide");
+  author1.classList.add("hide");
+});
+
+// sort
+let sort = document.querySelector(".sort");
+let controls = document.querySelector(".controls");
+sort.addEventListener("click", () => {
+  controls.classList.toggle("show1");
+});
+
+// sort verical
+let verical = document.querySelector(".vertical");
+verical.addEventListener("click", () => {
+  windows.classList.remove("flex");
+});
+
+// sort horizontal
+let horizontal = document.querySelector(".horizontal");
+horizontal.addEventListener("click", () => {
+  windows.classList.add("flex");
+});
+
+// // read file
+let con = 0;
+const next = document.querySelector(".next");
+const tip_block = document.querySelector(".tip_block");
+next.addEventListener("click", getPosts);
+function getPosts() {
+  fetch("https://jsonplaceholder.typicode.com/comments")
+    .then((res) => {
+      return res.json();
+    })
+    .then((post) => {
+      const body = post[con].body;
+      const p = document.createElement("p");
+      p.innerHTML = `${body}`;
+      tip_block.appendChild(p);
+      if (con % 2 == 0) {
+        tip_block.innerHTML = "";
+      }
+    });
+  con++;
+}
+
+// read file
+
+let input = document.querySelector(".file");
+let textarea = document.querySelector("textarea");
+
+input.addEventListener("change", () => {
+  let files = input.files;
+
+  if (files.length == 0) return;
+
+  const file = files[0];
+
+  let reader = new FileReader();
+
+  reader.onload = (e) => {
+    const file = e.target.result;
+    const lines = file.split(/\r\n|\n/);
+    textarea.value = lines.join("\n");
+  };
+
+  reader.onerror = (e) => alert(e.target.error.name);
+
+  reader.readAsText(file);
+});
+
+// close method
+let okBut = document.querySelector(".okBut>button");
+let okay = document.querySelector(".okay>button");
+let okey = document.querySelector(".okey");
+function closeMothod(e, target) {
+  target.addEventListener("click", () => {
+    e.classList.add("hide");
+  });
+}
+closeMothod(help1, okBut);
+closeMothod(author1, okay);
+closeMothod(tip1, okey);
